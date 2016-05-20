@@ -61,6 +61,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def landing_page
+    @featured_product = product.first
+  end
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -69,6 +74,5 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :colour)
+      params.require(:product).permit(:name, :description, :image_url, :colour, :price)
     end
-end
