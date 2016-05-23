@@ -1,0 +1,9 @@
+	<% @products.each do |product| %>
+    <%= render partial: "product", collection: @products %>      
+    <div class="col-sm-2 col-md-3">
+        <%= image_tag(product.image_url, class: "img-responsive") %>
+        <h1><%= product.name %></h1>
+        <h2><%= product.price %></h2>
+        <p><%= product.description %></p>
+      </div>
+    <% end %>
